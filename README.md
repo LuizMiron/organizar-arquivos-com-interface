@@ -1,0 +1,1 @@
+projeto feito para organizar arquivos baseado em sua extenção porém com usando uma interface para facilitar o processo.
