@@ -11,6 +11,11 @@ def obter_origem():
 def obter_destino():
     destino = askdirectory()
     vDestino.insert(tkinter.END, destino)
+    
+    
+def enviar():
+    funcoes.salvar(vOrigem.get(), vDestino.get())
+    funcoes.executar()
 
 
 # 1.CRIANDO UMA INTERFACE
@@ -52,4 +57,7 @@ vDestino.pack(side=tkinter.LEFT)
 btnOrigem = tkinter.Button(cDestino, text="procurar", command=obter_destino)
 btnOrigem.pack(side=tkinter.RIGHT)
 
+#3 EXECUTANDO FUNÇÕES
+btnExecutar = tkinter.Button(janela, text="salvar", command=enviar)
+btnExecutar.pack(side=tkinter.BOTTOM)
 janela.mainloop()
