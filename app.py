@@ -18,30 +18,36 @@ def obter_destino():
 janela = tkinter.Tk()
 janela.geometry("500x600")
 janela.title("main")
+diretorios = tkinter.Frame(janela)
+diretorios.pack()
+cOrigem = tkinter.Frame(diretorios)
+cOrigem.pack(side=tkinter.TOP)
+cDestino = tkinter.Frame(diretorios)
+cDestino.pack(side=tkinter.BOTTOM)
 
 #2.1 ADICIONANDO A ORIGEM
 # label com explicando o funcionamento
-texto = tkinter.Label(janela, text="adicione a origem")
-texto.grid(column=0, row=0)
+texto = tkinter.Label(cOrigem, text="adicione a origem")
+texto.pack(side=tkinter.TOP)
 
 #input de origem
-vOrigem = tkinter.Entry(janela, width=60)
-vOrigem.grid(column=0, row=1)
+vOrigem = tkinter.Entry(cOrigem, width=60)
+vOrigem.pack(side=tkinter.LEFT)
 
 #botão de origem
-btnOrigem = tkinter.Button(janela, text="procurar", command=obter_origem)
-btnOrigem.grid(column=1, row=1)
+btnOrigem = tkinter.Button(cOrigem, text="procurar", command=obter_origem)
+btnOrigem.pack(side=tkinter.RIGHT)
 
 
 #2.2 ADICIONANDO O DESTINO
 # label com explicando o funcionamento
-texto = tkinter.Label(janela, text="adicione o destino")
-texto.grid(column=0, row=3)
-#input de destino
-vDestino = tkinter.Entry(janela, width=60)
-vDestino.grid(column=0, row=4)
-#botão de origem
-btnOrigem = tkinter.Button(janela, text="procurar", command=obter_destino)
-btnOrigem.grid(column=1, row=4)
+texto = tkinter.Label(cDestino, text="adicione o destino")
+texto.pack(side=tkinter.TOP)
+# input de destino
+vDestino = tkinter.Entry(cDestino, width=60)
+vDestino.pack(side=tkinter.LEFT)
+# botão de origem
+btnOrigem = tkinter.Button(cDestino, text="procurar", command=obter_destino)
+btnOrigem.pack(side=tkinter.RIGHT)
 
 janela.mainloop()
